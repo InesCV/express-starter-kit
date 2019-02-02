@@ -3,23 +3,25 @@ const express = require('express');
 const ejs = require('ejs');
 const expressLayouts = require('express-ejs-layouts');
 const path = require('path');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
+// const cookieParser = require('cookie-parser');
+// const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
 const app = express();
+const port = 3000;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(expressLayouts);
-app.use(logger('dev'));
+
+// app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+// app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
@@ -40,5 +42,8 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// Start the server
+app.listen(port, () => console.log(`Everything is listening on port ${port}!`));
 
 module.exports = app;
