@@ -1,4 +1,4 @@
-# MEAN Starter Kit
+# Express Starter Kit
 
 It’s a web APP basic configuration with MEAN stack.
 

@@ -50,7 +50,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //     mongooseConnection: mongoose.connection,
 //     ttl: 24 * 60 * 60, // 1 day
 //   }),
-//   secret: 'jdej',
+//   secret: 'whatever',
 //   resave: true,
 //   saveUninitialized: true,
 //   cookie: {
